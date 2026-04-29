@@ -1,5 +1,6 @@
 package com.example.practica_1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Cliente{
 
     private String nombre;
     private String correo;
-    private int telefono;
+    private String telefono;
 
     @OneToMany(mappedBy = "cliente")
     @JsonIgnore
@@ -42,10 +43,10 @@ public class Cliente{
         this.correo = correo;
     }
 
-    public int getTelefono(){
+    public String getTelefono(){
         return telefono;
     }
-    public void setTelefono(int telefono){
+    public void setTelefono(String telefono){
         this.telefono = telefono;
     }
 }
