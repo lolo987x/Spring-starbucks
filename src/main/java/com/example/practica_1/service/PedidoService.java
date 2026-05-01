@@ -22,7 +22,7 @@ public class PedidoService{
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
     }
 
-    public Pedido guardarPedido(Pedido pedido){
+    public Pedido agregarPedido(Pedido pedido){
         return repository.save(pedido);
     }
 

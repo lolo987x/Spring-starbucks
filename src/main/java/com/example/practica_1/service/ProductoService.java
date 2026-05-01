@@ -19,10 +19,10 @@ public class ProductoService{
     }
 
     public Producto buscarPorId(Long id ){
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Producto no encontrado"));
     }
 
-    public Producto guardar(Producto producto) {
+    public Producto agregarProducto(Producto producto) {
         return repository.save(producto);
     }
 
